@@ -1,0 +1,51 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'outline' | 'brand-light';
+  size?: 'sm' | 'md' | 'lg';
+  type?: 'button' | 'submit' | 'reset';
+  class?: string;
+}
+
+const { 
+  href, 
+  variant = 'primary', 
+  size = 'md',
+  type = 'button',
+  class: className = ''
+} = Astro.props;
+
+// Base styles
+const baseStyles = 'inline-block rounded-full font-semibold transition-all duration-300 cursor-pointer';
+
+// Variant styles
+const variantStyles = {
+  primary: 'bg-secondary text-white hover:bg-secondary-dark', // Sage green, accessible
+  secondary: 'bg-tertiary text-white hover:bg-tertiary-dark', // Warm brown, accessible
+  outline: 'bg-white border-2 border-brand-orange text-tertiary hover:bg-brand-orange hover:text-white', // Orange accent
+  'brand-light': 'bg-brand-orange text-white hover:bg-brand-orange-light' // Orange for accents only
+};
+
+// Size styles
+const sizeStyles = {
+  sm: 'px-6 py-2 text-sm',
+  md: 'px-8 py-3 text-base',
+  lg: 'px-10 py-4 text-xl'
+};
+
+const classes = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
+
+// Render as link or button
+const Element = href ? 'a' : 'button';
+---
+
+{href ? (
+  <a href={href} class={classes}>
+    <slot />
+  </a>
+) : (
+  <button type={type} class={classes}>
+    <slot />
+  </button>
+)}
+

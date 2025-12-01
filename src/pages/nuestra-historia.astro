@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+---
+
+<BaseLayout title="Nuestra Historia | Betsubara Dojo">
+  <!-- Section 1: Video and Dedication -->
+  <Section>
+    <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+      <!-- Left: Title -->
+      <div>
+        <h1 class="text-4xl md:text-5xl font-bold text-black leading-tight">
+          Esta sección está dedicada a todas aquellas personas que ayudaron a que Betsubara se haga realidad.
+        </h1>
+      </div>
+
+      <!-- Right: YouTube Video -->
+      <div>
+        <div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+          <iframe 
+            width="100%" 
+            height="100%" 
+            src="https://www.youtube.com/embed/3zYbwZxPOxo" 
+            title="Historia de Betsubara Dojo" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen
+            class="w-full h-full"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Section 2: Contributors with Background -->
+  <section class="relative bg-cover bg-center bg-no-repeat py-16" style="background-image: url('/history_bg.jpg');">
+    <!-- Dark overlay for readability -->
+    <div class="absolute inset-0 bg-black/30"></div>
+    
+    <div class="container ml-auto px-4 relative z-10">
+      <div class="max-w-3xl ml-auto mr-2">
+        <h2 class="text-3xl font-bold text-white mb-8 text-right drop-shadow-lg">EN ORDEN CRONOLÓGICO DE CONTRIBUCIÓN</h2>
+        
+        <div class="bg-white/65 backdrop-blur-sm border border-white/30 rounded-lg p-6 md:p-8 shadow-lg">
+          <div class="text-text-base text-base leading-relaxed space-y-3 text-justify">
+            <p>elsa & dick gary, peter barker, daniel cohen, dolores rivellino, bruce & gale hinton, laura finch</p>
+            
+            <p>liz twerdahl, moshe gavrielov, andy leifer, carla hammer, billy segorski, paul dondlinger</p>
+            
+            <p>caroline wamsler, brianne goodman, mia wigmore, john smialek, rick rogers, dylan gary</p>
+            
+            <p>dana cho, benson cowan, harry anger, amanda rogers, ethan lacy, lisa walden, yosh katz</p>
+            
+            <p>aikido LA, ericka saracho, deena tumeh, jon simmons, annik boulva, matt o'hara</p>
+            
+            <p>anna pavlovic, rick rogers, erin brown, linda barnas, sandy friedrich, liz homberg, jenny vogt</p>
+            
+            <p>bill o'neil, andrew strong, eliot rees, stephanie sagheb, paolo biron, brad crockett</p>
+            
+            <p>stan moress, amanda wilkinson, yvonne power, nathalie jordi, alex stockley von statzer</p>
+            
+            <p>jeannie trigg, kelly hearn, carole edrich, stephanie de fiores</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

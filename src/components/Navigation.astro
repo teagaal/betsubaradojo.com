@@ -1,0 +1,72 @@
+---
+import DesktopNav from './navigation/DesktopNav.astro';
+import MobileNav from './navigation/MobileNav.astro';
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-20 transition-all duration-300">
+      <a href="/" class="flex items-center hover:opacity-80 transition-all duration-300">
+        <img id="nav-logo" src="/logo.png" alt="Betsubara Dojo" class="h-12 transition-all duration-300" />
+      </a>
+
+      <MobileNav currentPath={currentPath} />
+      <DesktopNav currentPath={currentPath} />
+    </div>
+
+    <!-- Mobile menu is rendered by MobileNav component -->
+  </div>
+</nav>
+
+<!-- Spacer to prevent content from going under fixed nav -->
+<div class="h-20"></div>
+
+<script>
+  // Sticky navigation with scroll effects (desktop only)
+  let lastScroll = 0;
+  const nav = document.getElementById('main-nav');
+  const logo = document.getElementById('nav-logo');
+  
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    const isDesktop = window.innerWidth >= 768; // md breakpoint
+    
+    if (currentScroll > 50 && isDesktop) {
+      // User has scrolled down on desktop
+      nav?.classList.add('nav-scrolled');
+      logo?.classList.add('logo-small');
+    } else {
+      // User is at top or on mobile
+      nav?.classList.remove('nav-scrolled');
+      logo?.classList.remove('logo-small');
+    }
+    
+    lastScroll = currentScroll;
+  });
+</script>
+
+<style>
+  /* Default nav styles */
+  #main-nav {
+    background-color: #F4F2EE; /* bg-white */
+    transition: all 0.3s ease;
+  }
+  
+  /* Scrolled state styles */
+  #main-nav.nav-scrolled {
+    background-color: rgba(244, 242, 238, 0.85); /* bg-white with transparency */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 6px -1px rgba(29, 27, 25, 0.1), 0 2px 4px -1px rgba(29, 27, 25, 0.06);
+  }
+  
+  #main-nav.nav-scrolled .flex {
+    height: 4rem; /* 64px */
+  }
+  
+  #nav-logo.logo-small {
+    height: 2.5rem; /* 40px */
+  }
+</style>

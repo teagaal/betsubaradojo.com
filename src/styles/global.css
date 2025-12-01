@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/* Betsubara Dojo Design Tokens */
+@theme {
+  /* Brand Colors */
+  --color-brand-orange: #d16c36; /* Primary accent color */
+  --color-brand-orange-light: #e07d47; /* Lighter orange for hover states */
+  --color-brand-orange-dark: #b85c2d; /* Darker orange for text */
+  
+  /* Primary Palette */
+  --color-white: #F4F2EE; /* Warm off-white background */
+  --color-black: #1d1b19; /* Deep charcoal for text */
+  --color-secondary: #5c6656; /* Sage green - accessible for buttons */
+  --color-secondary-dark: #4a5244; /* Darker sage for hover states */
+  --color-tertiary: #754a2d; /* Warm brown - accessible for buttons */
+  --color-tertiary-dark: #5f3c24; /* Darker brown for hover states */
+  
+  /* Text Colors */
+  --color-text-base: #5c6656; /* Secondary color for body text */
+  --color-text-dark: #1d1b19; /* Black for headings */
+  --color-text-white: #F4F2EE; /* White for text on dark backgrounds */
+  
+  /* Background Colors */
+  --color-bg-white: #F4F2EE;
+  --color-bg-light: #faf9f7; /* Lighter variation */
+  --color-bg-lighter: #fdfcfb; /* Even lighter */
+  --color-bg-dark: #5c6656; /* Secondary for dark sections */
+  --color-bg-darker: #1d1b19; /* Black for darkest sections */
+  
+  /* Border Colors */
+  --color-border-light: #d9d6d0; /* Subtle border on white background */
+  --color-border-accent: #d16c36; /* Orange for accent borders */
+  
+  /* State Colors */
+  --color-hover-bg: #faf9f7;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.7;
+  font-family: "PT Sans", Helvetica, Arial, Lucida, sans-serif;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-base);
+  background-color: var(--color-bg-white);
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}

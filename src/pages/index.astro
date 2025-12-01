@@ -1,16 +1,142 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "Betsubara Dojo",
+  "description": "Escuela de artes marciales en Villa Crespo. Clases de Kung Fu, Tai Chi, Aikido y Bujinkan para todos los niveles.",
+  "url": "https://www.betsubaradojo.com",
+  "logo": "https://www.betsubaradojo.com/logo.png",
+  "image": "https://www.betsubaradojo.com/dojo.jpg",
+  "telephone": "+54-9-11-3283-0961",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Acoyte 1678",
+    "addressLocality": "Villa Crespo",
+    "addressRegion": "Ciudad Autónoma de Buenos Aires",
+    "postalCode": "C1414",
+    "addressCountry": "AR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-34.6051",
+    "longitude": "-58.4382"
+  },
+  "sameAs": [
+    "https://www.instagram.com/betsubaradojo",
+    "https://www.facebook.com/betsubaradojo"
+  ],
+  "priceRange": "$$",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Wednesday", "Friday"],
+      "opens": "18:00",
+      "closes": "21:00"
+    }
+  ]
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout 
+  title="Betsubara Dojo | Artes Marciales en Villa Crespo - Kung Fu, Tai Chi, Aikido"
+  description="Escuela de artes marciales tradicionales en Villa Crespo, Buenos Aires. Clases de Kung Fu, Tai Chi, Aikido y Bujinkan para todos los niveles. ¡Primera clase gratis!"
+>
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+	<!-- Hero Section -->
+	<section class="relative bg-bg-darker text-white py-48 md:py-64 min-h-[600px] md:min-h-[700px] bg-cover bg-center bg-no-repeat" style="background-image: url('/dojo.jpg');">
+		<!-- Dark overlay for text readability -->
+		<div class="absolute inset-0 bg-black/60"></div>
+		
+		<!-- Content -->
+		<div class="container mx-auto px-4 text-center relative z-10">
+			<h1 class="text-6xl md:text-8xl font-bold mb-6 leading-tight min-h-[144px] md:min-h-[192px] flex items-center justify-center">
+				<span id="cycling-text" class="text-brand-orange">Aikido</span>
+			</h1>
+			<p class="text-3xl mb-10 text-gray-200 max-w-3xl mx-auto">
+				Artes marciales y disciplinas orientadas al bienestar
+			</p>
+		</div>
+	</section>
+
+	<script>
+		const disciplines = [
+			'Aikido',
+			'Jiu Jitsu Brasilero',
+			'Karate Do',
+			'Kung Fu',
+			'Tai Chi & Chi Kung',
+			'Judo',
+			'Pakua',
+			'Taekwondo'
+		];
+		
+		let currentIndex = 0;
+		const textElement = document.getElementById('cycling-text');
+		
+		function cycleDisciplines() {
+			if (!textElement) return;
+			
+			// Fade out
+			textElement.style.opacity = '0';
+			textElement.style.transform = 'translateY(-10px)';
+			
+			setTimeout(() => {
+				// Change text
+				currentIndex = (currentIndex + 1) % disciplines.length;
+				textElement.textContent = disciplines[currentIndex];
+				
+				// Fade in
+				textElement.style.opacity = '1';
+				textElement.style.transform = 'translateY(0)';
+			}, 500);
+		}
+		
+		// Start cycling
+		setInterval(cycleDisciplines, 3000);
+		
+		// Set initial transition
+		if (textElement) {
+			textElement.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
+		}
+	</script>
+
+	<!-- About Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4">
+			<div class="max-w-4xl mx-auto text-center mb-12">
+				<h2 class="text-4xl md:text-5xl font-bold text-black mb-6">Más que la suma de sus partes.</h2>
+				<p class="text-xl text-text-base leading-relaxed">
+					Betsubara es un apetito insaciable por lo que te gusta y, para nosotros, ese gusto son las artes marciales. Nos ocupamos de crear un espacio donde la gente venga a aprender en un ambiente confortable y alentador.
+				</p>
+			</div>
+			
+			<div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-10">
+				<div class="rounded-lg overflow-hidden shadow-lg h-80 md:h-96">
+					<img 
+						src="/betsuentradainside.jpg" 
+						alt="Interior del Betsubara Dojo" 
+						class="w-full h-full object-cover"
+					/>
+				</div>
+				<div class="rounded-lg overflow-hidden shadow-lg h-80 md:h-96">
+					<img 
+						src="/betsuteaceremony.jpg" 
+						alt="Ceremonia de té en Betsubara Dojo" 
+						class="w-full h-full object-cover"
+					/>
+				</div>
+			</div>
+			
+			<div class="text-center">
+				<Button href="/nuestra-historia" size="lg">
+					Conocé nuestra historia
+				</Button>
+			</div>
+		</div>
+	</section>
+
+	
+</BaseLayout>

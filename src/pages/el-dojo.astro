@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+---
+
+<style>
+  .card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<BaseLayout title="El Dojo | Betsubara Dojo">
+  <!-- Section 1: El dojo: nuestro oasis marcial -->
+  <Section>
+    <h1 class="text-5xl font-bold text-black mb-8 text-center">El dojo: nuestro oasis marcial</h1>
+    
+    <p class="text-xl text-text-base leading-relaxed mb-12 max-w-3xl mx-auto text-center">
+      El dojo es más que un lugar donde ir a entrenar, por eso nos enorgullece ofrecer un espacio único para tu crecimiento personal, con la calidez y comodidad de un hogar.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <!-- Como en Japón -->
+      <div class="card bg-brand-orange/10 border-2 border-brand-orange/20 rounded-lg p-8 shadow-sm">
+        <div class="text-5xl mb-4">🩴</div>
+        <h3 class="text-2xl font-bold text-black mb-4">Como en Japón</h3>
+        <p class="text-text-base leading-relaxed">
+          Dentro del dojo solo se permite transitar en ojotas, por lo que te pedimos que traigas las tuyas. Hicimos un lugar especial para que puedas dejarlas. Así entre todos mantenemos limpio el tatami.
+        </p>
+      </div>
+
+      <!-- Duchas disponibles -->
+      <div class="card bg-brand-orange/10 border-2 border-brand-orange/20 rounded-lg p-8 shadow-sm">
+        <div class="text-5xl mb-4">🚿</div>
+        <h3 class="text-2xl font-bold text-black mb-4">¡Duchas disponibles!</h3>
+        <p class="text-text-base leading-relaxed">
+          Podés usar las duchas y los artículos de tocador, pero debés traer tu toalla, que podés dejar junto con tu ropa en el vestuario.
+        </p>
+      </div>
+
+      <!-- Un segundo hogar -->
+      <div class="card bg-brand-orange/10 border-2 border-brand-orange/20 rounded-lg p-8 shadow-sm">
+        <div class="text-5xl mb-4">🏠</div>
+        <h3 class="text-2xl font-bold text-black mb-4">El Dojo: un segundo hogar</h3>
+        <p class="text-text-base leading-relaxed">
+          Nos enorgullece tener un espacio cálido e impecable, pero necesitamos de tu ayuda para que se mantenga así. Por favor, colaborá con la limpieza y el orden para dejar todo como lo encontraste (¡o mejor!).
+        </p>
+      </div>
+
+      <!-- Llegaste temprano -->
+      <div class="card bg-brand-orange/10 border-2 border-brand-orange/20 rounded-lg p-8 shadow-sm">
+        <div class="text-5xl mb-4">☕</div>
+        <h3 class="text-2xl font-bold text-black mb-4">¿Llegaste temprano?</h3>
+        <p class="text-text-base leading-relaxed">
+          ¡No hay problema! Podés quedarte en la zona de reunion, donde podés tomar algo, leer, o conversar con los demás. Si el entrepiso está libre, podés ir a entrar en calor, elongar o repasar alguna técnica siempre y cuando no interfiera con la clase en el tatami (la colchoneta de práctica).
+        </p>
+      </div>
+
+      <!-- El silencio es oro -->
+      <div class="card bg-brand-orange/10 border-2 border-brand-orange/20 rounded-lg p-8 shadow-sm md:col-span-2">
+        <div class="text-5xl mb-4">🤫</div>
+        <h3 class="text-2xl font-bold text-black mb-4">El silencio es oro</h3>
+        <p class="text-text-base leading-relaxed">
+          Si bien el área de descanso sirve para relajarse, te pedimos por favor que evites hablar por teléfono o hacer ruidos fuertes que puedan desconcentrar a quienes se encuentran practicando en el tatami.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Section 2: Beneficios -->
+  <Section background="light">
+    <h2 class="text-4xl font-bold text-black mb-8 text-center">Beneficios</h2>
+    
+    <div class="max-w-3xl mx-auto">
+      <div class="card bg-secondary/10 border-2 border-secondary/20 rounded-lg p-8 shadow-sm">
+        <div class="text-5xl mb-4">⏰</div>
+        <h3 class="text-2xl font-bold text-black mb-4">No lo dejes para mañana</h3>
+        <p class="text-text-base leading-relaxed">
+          Si al final de tu clase de prueba te anotas para empezar a practicar, ¡te bonificamos el costo de la clase de prueba y solo abonás la diferencia del pase que elijas!
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Section 3: La letra pequeña -->
+  <Section>
+    <h2 class="text-4xl font-bold text-black mb-8 text-center">La letra pequeña</h2>
+    
+    <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <!-- Papeles al día -->
+      <div class="card bg-tertiary/10 border-2 border-tertiary/20 rounded-lg p-8 shadow-sm">
+        <div class="text-5xl mb-4">📋</div>
+        <h3 class="text-2xl font-bold text-black mb-4">Papeles al día</h3>
+        <p class="text-text-base leading-relaxed">
+          Es importante que, cuando tengas tiempo, traigas un apto físico. Así nos ayudas a cuidarte antes, durante y después de la práctica.
+        </p>
+      </div>
+
+      <!-- A tu servicio -->
+      <div class="card bg-tertiary/10 border-2 border-tertiary/20 rounded-lg p-8 shadow-sm">
+        <div class="text-5xl mb-4">💬</div>
+        <h3 class="text-2xl font-bold text-black mb-4">A tu servicio</h3>
+        <p class="text-text-base leading-relaxed">
+          Si tenés alguna duda o hay algo que necesites, marcial o no, solo hacénoslo saber.
+        </p>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>
+
+<script>
+  // Intersection Observer for card animations
+  const cards = document.querySelectorAll('.card');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // Add a slight delay for each card for staggered effect
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+  
+  cards.forEach(card => {
+    observer.observe(card);
+  });
+</script>
+

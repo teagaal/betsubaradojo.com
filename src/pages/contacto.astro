@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import Section from '../components/Section.astro';
+---
+
+<BaseLayout 
+  title="Contacto | Betsubara Dojo - Acoyte 1678, Villa Crespo"
+  description="Contactá con Betsubara Dojo en Villa Crespo. Dirección: Acoyte 1678, Buenos Aires. Tel: 11 4187-8910. Consultá por clases de Kung Fu, Tai Chi y más."
+>
+  <!-- Contact Form Section -->
+  <Section>
+      <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <!-- Left Column - Title and Contact Info -->
+        <div>
+          <h1 class="text-4xl font-bold text-black mb-8 leading-tight">
+            Si tenés alguna duda sobre qué disciplina probar o cualquiera otra sugerencia, ¡contactanos!
+          </h1>
+          
+          <div class="space-y-6 text-text-base">
+            <div>
+              <h3 class="text-xl font-bold text-black mb-2">Dirección</h3>
+              <p class="text-lg">
+                Acoyte 1678<br>
+                Villa Crespo, Buenos Aires
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-bold text-black mb-2">Teléfono</h3>
+              <a href="tel:+541141878910" class="text-lg text-brand-orange hover:text-brand-orange-light transition-colors">
+                11 4187-8910
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column - Contact Form -->
+        <div>
+          <div class="bg-white border border-border-light rounded-lg p-8 shadow-sm">
+            <form class="space-y-4">
+              <div>
+                <label for="name" class="block text-black font-semibold mb-2">Nombre</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name"
+                  class="w-full px-4 py-3 border border-border-light rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-transparent outline-none transition bg-bg-white"
+                  required
+                />
+              </div>
+              
+              <div>
+                <label for="email" class="block text-black font-semibold mb-2">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email"
+                  class="w-full px-4 py-3 border border-border-light rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-transparent outline-none transition bg-bg-white"
+                  required
+                />
+              </div>
+              
+              <div>
+                <label for="message" class="block text-black font-semibold mb-2">Mensaje</label>
+                <textarea 
+                  id="message" 
+                  name="message"
+                  rows="4"
+                  class="w-full px-4 py-3 border border-border-light rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-transparent outline-none transition resize-none bg-bg-white"
+                  required
+                ></textarea>
+              </div>
+              
+              <div>
+                <label for="reason" class="block text-black font-semibold mb-2">Motivo de consulta</label>
+                <select 
+                  id="reason" 
+                  name="reason"
+                  class="w-full px-4 py-3 border border-border-light rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-transparent outline-none transition bg-bg-white"
+                  required
+                >
+                  <option value="">Seleccioná una opción</option>
+                  <option value="abordaje-corporal">Abordaje corporal</option>
+                  <option value="aikido">Aikido</option>
+                  <option value="alquiler-sala">Alquiler de sala</option>
+                  <option value="clases-femeninas">Clases femeninas</option>
+                  <option value="clases-ninos">Clases para niños</option>
+                  <option value="entrenamiento-fisico">Entrenamiento físico</option>
+                  <option value="jiu-jitsu">Jiu Jitsu Brasilero</option>
+                  <option value="judo">Judo</option>
+                  <option value="kung-fu">Kung Fu</option>
+                  <option value="otros">Otros</option>
+                  <option value="pakua">Pakua</option>
+                  <option value="tai-chi">Tai Chi</option>
+                  <option value="taekwondo">Taekwondo</option>
+                  <option value="yoga-ashtanga">Yoga Ashtanga</option>
+                  <option value="yoga-vinyasa">Yoga Vinyasa</option>
+                </select>
+              </div>
+              
+              <Button type="submit" size="lg" class="w-full">
+                Enviar Mensaje
+              </Button>
+            </form>
+          </div>
+        </div>
+      </div>
+  </Section>
+
+  <!-- Map Section -->
+  <Section>
+      <h2 class="text-4xl font-bold text-black text-center mb-8">¿Cómo llegar?</h2>
+        <div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+          <iframe 
+            src="https://www.google.com/maps?q=Acoyte+1678,+Villa+Crespo,+Buenos+Aires&output=embed"
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación de Betsubara Dojo - Acoyte 1678, Villa Crespo"
+          >        </iframe>
+      </div>
+  </Section>
+</BaseLayout>
+

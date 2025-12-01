@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+---
+
+<BaseLayout title="Horarios 2025 | Betsubara Dojo">
+  <Section>
+    <h1 class="text-5xl font-bold text-black mb-6 text-center">Horarios 2025</h1>
+    
+    <p class="text-xl text-text-base leading-relaxed mb-12 max-w-3xl mx-auto text-center">
+      Encontrá la disciplina que más se ajuste a tus horarios.
+    </p>
+
+    <div class="max-w-5xl mx-auto">
+      <button 
+        id="zoom-image-trigger"
+        class="block w-full cursor-zoom-in hover:opacity-90 transition-opacity"
+        aria-label="Click para ampliar la imagen"
+      >
+        <img 
+          src="/2025_horarios.png" 
+          alt="Horarios 2025 - Betsubara Dojo" 
+          class="w-full h-auto rounded-lg shadow-lg"
+        />
+        <p class="text-sm text-text-base mt-3 text-center md:hidden">
+          👆 Tocá la imagen para ampliar
+        </p>
+      </button>
+    </div>
+  </Section>
+
+  <!-- Image zoom modal -->
+  <div 
+    id="image-zoom-modal" 
+    class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4"
+    aria-hidden="true"
+  >
+    <button 
+      id="close-zoom-modal"
+      class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
+      aria-label="Cerrar vista ampliada"
+    >
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    
+    <div class="w-full h-full flex items-center justify-center overflow-auto">
+      <img 
+        src="/2025_horarios.png" 
+        alt="Horarios 2025 - Betsubara Dojo (ampliado)" 
+        class="max-w-full max-h-full object-contain"
+        style="touch-action: pinch-zoom;"
+      />
+    </div>
+  </div>
+
+  <script>
+    // Image zoom functionality
+    const zoomTrigger = document.getElementById('zoom-image-trigger');
+    const zoomModal = document.getElementById('image-zoom-modal');
+    const closeZoomBtn = document.getElementById('close-zoom-modal');
+    
+    function openZoomModal() {
+      zoomModal?.classList.remove('hidden');
+      zoomModal?.classList.add('flex');
+      zoomModal?.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeZoomModal() {
+      zoomModal?.classList.add('hidden');
+      zoomModal?.classList.remove('flex');
+      zoomModal?.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    
+    zoomTrigger?.addEventListener('click', openZoomModal);
+    closeZoomBtn?.addEventListener('click', closeZoomModal);
+    
+    // Close on background click
+    zoomModal?.addEventListener('click', (e) => {
+      if (e.target === zoomModal) {
+        closeZoomModal();
+      }
+    });
+    
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && zoomModal?.getAttribute('aria-hidden') === 'false') {
+        closeZoomModal();
+      }
+    });
+  </script>
+</BaseLayout>
+

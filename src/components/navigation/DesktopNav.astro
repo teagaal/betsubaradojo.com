@@ -1,0 +1,157 @@
+---
+import { navigationItems, isDropdown } from '../../data/navigation';
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+
+function isActive(href: string): boolean {
+  if (href === '/') return currentPath === '/';
+  return currentPath.startsWith(href);
+}
+
+function isDropdownActive(items: { href: string }[]): boolean {
+  return items.some(item => currentPath.startsWith(item.href));
+}
+---
+
+<ul class="hidden md:flex space-x-8 items-center">
+  {navigationItems.map((item) => {
+    if (isDropdown(item)) {
+      const isActive = isDropdownActive(item.items);
+      return (
+        <li class="relative dropdown-parent">
+          <button 
+            type="button"
+            class={`text-base font-normal cursor-pointer hover:text-brand-orange transition-colors flex items-center gap-1 ${
+              isActive 
+                ? 'text-brand-orange font-semibold' 
+                : 'text-text-base'
+            }`}
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            {item.label}
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-bg-white border border-border-light rounded-lg shadow-lg opacity-0 invisible transition-all duration-200" role="menu" aria-label={`${item.label} submenú`}>
+            {item.items.map(subItem => (
+              <li role="none">
+                <a href={subItem.href} role="menuitem" class="block px-4 py-3 text-text-base hover:bg-hover-bg hover:text-brand-orange transition-colors">
+                  {subItem.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+      );
+    } else {
+      return (
+        <li>
+          <a 
+            href={item.href}
+            class={`text-base font-normal hover:text-brand-orange transition-colors ${
+              isActive(item.href) 
+                ? 'text-brand-orange font-semibold' 
+                : 'text-text-base'
+            }`}
+          >
+            {item.label}
+          </a>
+        </li>
+      );
+    }
+  })}
+</ul>
+
+<script>
+  // Desktop dropdown functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const dropdownParents = document.querySelectorAll('.dropdown-parent');
+    
+    dropdownParents.forEach(parent => {
+      const button = parent.querySelector('button');
+      const menu = parent.querySelector('.dropdown-menu');
+      
+      if (!button || !menu) return;
+      
+      // Toggle dropdown on click
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+        
+        // Close all other dropdowns
+        closeAllDropdowns();
+        
+        if (!isOpen) {
+          openDropdown(button, menu);
+        }
+      });
+      
+      // Keyboard navigation
+      button.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          button.click();
+        } else if (e.key === 'Escape') {
+          closeDropdown(button, menu);
+        } else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          openDropdown(button, menu);
+          const firstLink = menu.querySelector('a');
+          firstLink?.focus();
+        }
+      });
+      
+      // Focus trap within dropdown
+      const links = menu.querySelectorAll('a');
+      links.forEach((link, index) => {
+        link.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            closeDropdown(button, menu);
+            button.focus();
+          } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            const nextLink = links[index + 1] || links[0];
+            nextLink.focus();
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            const prevLink = links[index - 1] || links[links.length - 1];
+            prevLink.focus();
+          }
+        });
+      });
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', () => {
+      closeAllDropdowns();
+    });
+    
+    function openDropdown(button: Element, menu: Element) {
+      button.setAttribute('aria-expanded', 'true');
+      menu.classList.remove('opacity-0', 'invisible');
+      menu.classList.add('opacity-100', 'visible');
+    }
+    
+    function closeDropdown(button: Element, menu: Element) {
+      button.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('opacity-100', 'visible');
+      menu.classList.add('opacity-0', 'invisible');
+    }
+    
+    function closeAllDropdowns() {
+      dropdownParents.forEach(parent => {
+        const button = parent.querySelector('button');
+        const menu = parent.querySelector('.dropdown-menu');
+        if (button && menu) {
+          closeDropdown(button, menu);
+        }
+      });
+    }
+  });
+</script>
