@@ -1,225 +1,61 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Section from '../../components/Section.astro';
+
+const instagram = 'escuela_shaolien';
 ---
 
-<BaseLayout title="Kung Fu | Betsubara Dojo">
-  <!-- Section 1: About Kung Fu -->
+<BaseLayout title="Kung fu | Betsubara Dojo">
   <Section>
-      <div class="mb-8">
-      <a href="/disciplinas" class="text-brand-orange hover:text-brand-orange-light transition-colors font-semibold">
-          ← Volver a Disciplinas
-        </a>
-      </div>
-
     <div class="max-w-6xl mx-auto">
-      <h1 class="text-5xl font-bold text-black mb-6">Kung Fu</h1>
-      
-      <p class="text-2xl text-brand-orange italic mb-12 leading-relaxed">
-        El verdadero gozo viene de la actividad de la mente y el ejercicio del cuerpo: los dos van unidos.
-      </p>
+      <h1 class="text-5xl font-bold text-black mb-8">Kung fu</h1>
 
-      <!-- Two column layout: images left, text right -->
-      <div class="flex flex-col md:flex-row gap-8">
-        <!-- Left column: Images (mobile: interspersed with text) -->
-        <div class="md:w-1/3 flex flex-col gap-6">
-          <div class="w-full max-w-sm mx-auto md:mx-0">
-            <img 
-              src="/kungfulumartinsuti.jpg" 
-              alt="Kung fu - Lu Martin Suti" 
-              class="w-full h-auto rounded-lg shadow-lg"
-            />
-          </div>
-          
-          <!-- Mobile only: First text section -->
-          <div class="md:hidden prose prose-lg text-text-base space-y-6 leading-relaxed">
-            <p>
-              Vamos a empezar aclarando el significado del término kung fu. Es un coloquialismo chino para designar la habilidad adquirida con el tiempo, constancia, disciplina y esfuerzo, por lo que en el idioma chino se utiliza para resaltar la destreza en un arte o actividad, ya que literalmente la palabra Kung significa Trabajo y Fu, tiempo, Kung fu significa dominar una actividad a base de mucha práctica, trabajo y dedicación. Es decir que Kung Fu, dominio de un arte, solo se logra a través de un esfuerzo concentrado y constante.
-            </p>
-
+      <div class="flex flex-col md:flex-row gap-10">
+        <div class="md:w-3/5">
+          <div class="prose prose-lg text-text-base leading-relaxed space-y-6">
             <p>
               Se considera que el origen de las artes marciales chinas (como tal) no emana del tipo de lucha sino de la filosofía, es decir, de sus principios filosóficos. Por ello, se datan los orígenes del kung-fu en el año 527 cuando, según cuenta la leyenda, un monje budista procedente de la India llamado Bodhidharma (Damo "Tamo" en chino) llegó al Monasterio de Shaolin (Henan, norte de China). Tamo consideraba que era beneficioso para sus prácticas espirituales que los monjes tuvieran cuerpos sanos y buena salud, por ello les enseñó una serie de ejercicios, para ayudarles en sus meditaciones. Estos movimientos fueron los inicios de la base de las artes marciales chinas, pero estaban muy lejos de lo que hoy se conoce como kung fu. Sin embargo, muy probablemente en el Monasterio de Shaolin no fuesen totalmente desconocedores de algunas habilidades de lucha antes de la llegada de Damo.
             </p>
-
             <p>
               Es una forma de autodefensa y en conjunto con sus principios filosóficos crea una forma de arte holística que siembra el equilibrio interior.
             </p>
+          </div>
 
-            <h2 class="text-3xl font-bold text-black mt-10 mb-4">Los principios filosóficos en los que se basa el Kung fu son:</h2>
-
-            <h3 class="text-2xl font-bold text-black mt-8 mb-3">El Taoísmo:</h3>
-            <p>
-              Basado primordialmente en el Tao Te King que la tradición atribuye al filósofo chino Lao Tsé. Sus enseñanzas parten del concepto de unidad absoluta y al mismo tiempo mutable, denominado Tao. La palabra china tao (o dao, dependiendo de la romanización que se use), suele traducirse por 'vía' o 'camino'. El Taoísmo establece la existencia de tres fuerzas: una pasiva, otra activa y una tercera, conciliadora. Las dos primeras se oponen y complementan simultáneamente entre sí, es decir que son interdependientes de manera absoluta y funcionan como una unidad. Son el yin (fuerza pasiva/sutil, femenina, húmeda…) y el yang (fuerza activa/concreta, masculina, seca…). La tercera fuerza es el tao, o fuerza superior que las contiene.
-            </p>
-            <p>
-              El objetivo fundamental de los taoístas es alcanzar la inmortalidad, si bien, a veces no se entiende ésta literalmente, sino como longevidad en plenitud. De la misma manera, se decía que las personas que vivían en armonía con la naturaleza eran inmortales.
-          </p>
-        </div>
-
-          <div class="w-full max-w-sm mx-auto md:mx-0">
-            <img 
-              src="/kungfurondachueypienpu.jpg" 
-              alt="Kung fu - Ronda Chuey Pien Pu" 
-              class="w-full h-auto rounded-lg shadow-lg"
-            />
-            </div>
-            
-          <!-- Mobile only: Second text section -->
-          <div class="md:hidden prose prose-lg text-text-base space-y-6 leading-relaxed">
-            <h3 class="text-2xl font-bold text-black mt-8 mb-3">El Budismo Chan (禅Chan = Zen = "meditación")</h3>
-            <p>Conducta ética basada en la comprensión de las cuatro verdades:</p>
-            <ol class="list-decimal list-inside space-y-2 ml-4">
-              <li>El sufrimiento existe.</li>
-              <li>El sufrimiento tiene una causa.</li>
-              <li>El sufrimiento puede extinguirse, extinguiendo su causa.</li>
-              <li>Para extinguir la causa del sufrimiento, debemos seguir el Noble camino óctuple:
-                <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
-                  <li>Comprensión correcta</li>
-                  <li>Pensamiento correcto</li>
-                  <li>Palabra correcta</li>
-                  <li>Acción correcta</li>
-                  <li>Ocupación correcta</li>
-                  <li>Esfuerzo correcto</li>
-                  <li>Atención correcta</li>
-                  <li>Concentración correcta</li>
+          <div class="mt-12 space-y-6">
+            <div>
+              <h3 class="text-lg font-bold text-black mb-2">Horarios</h3>
+              <ul class="text-text-base text-lg space-y-3">
+                <li>
+                  <span class="font-semibold text-black">Kung fu mixto</span><br>
+                  Lunes y martes 19hs · Jueves 20hs · Miércoles 11hs
+                </li>
+                <li>
+                  <span class="font-semibold text-black">Kung fu para mujeres</span><br>
+                  Jueves 19hs
+                </li>
+                <li>
+                  <span class="font-semibold text-black">Kung fu infantil</span><br>
+                  Lunes 17hs
+                </li>
               </ul>
-              </li>
-            </ol>
-
-            <h3 class="text-2xl font-bold text-black mt-8 mb-3">Confucionismo:</h3>
-            <p>
-              Es el conjunto de doctrinas morales. Como para la mayor parte de sus contemporáneos, los confucianos ven al cosmos como algo armónico que regula las estaciones, la vida animal, la vegetal y la humana. Si esta armonía era trastornada, habría graves consecuencias. Un ejemplo común que utiliza el confucianismo es el del mal gobernante que conduce a su pueblo a la ruina mediante su conducta.
-            </p>
-
-            <p class="mt-6">
-              Estos principios se relacionan con lo que se conoce en las artes marciales con el término de «Budo» (en japonés), Wu Dao "Camino del guerrero" (conjunto de normas éticas).
-            </p>
-
-            <p>
-              Las escuelas tradicionales chinas de artes marciales, tales como el famoso monasterio de Shaolin, consideran que el kung-fu no es sólo un método de lucha (o autoprotección), sino que también es una filosofía o estilo de vida.
-            </p>
-
-            <p>
-              Los estilos de kung-fu se pueden dividir en varias categorías: por ejemplo, externos e internos, en referencia a si hacen mayor énfasis en el desarrollo de capacidades físicas o, por el contrario, en el potencial interior.
-            </p>
-
-            <p>
-              También se pueden clasificar según su origen geográfico; en estilos del norte y del sur.
-            </p>
-
-            <p>
-              La principal diferencia destacable entre los estilos del norte y del sur es que los del norte tienden a enfatizar en las patadas (rápidas y potentes), saltos y sus movimientos, en general, son fluidos y rápidos, mientras que los estilos del sur se centran más en la fuerza de los brazos y las técnicas de mano, con posiciones firmes y estables.
-            </p>
-
-            <p>
-              El término "kwoon" significa "sala de entrenamiento", es decir, es el lugar donde se aprende las artes marciales.
-            </p>
-          </div>
-        </div>
-
-        <!-- Right column: Text (desktop only) -->
-        <div class="hidden md:block md:w-2/3 prose prose-lg text-text-base space-y-6 leading-relaxed">
-          <p>
-            Vamos a empezar aclarando el significado del término kung fu. Es un coloquialismo chino para designar la habilidad adquirida con el tiempo, constancia, disciplina y esfuerzo, por lo que en el idioma chino se utiliza para resaltar la destreza en un arte o actividad, ya que literalmente la palabra Kung significa Trabajo y Fu, tiempo, Kung fu significa dominar una actividad a base de mucha práctica, trabajo y dedicación. Es decir que Kung Fu, dominio de un arte, solo se logra a través de un esfuerzo concentrado y constante.
-          </p>
-
-          <p>
-            Se considera que el origen de las artes marciales chinas (como tal) no emana del tipo de lucha sino de la filosofía, es decir, de sus principios filosóficos. Por ello, se datan los orígenes del kung-fu en el año 527 cuando, según cuenta la leyenda, un monje budista procedente de la India llamado Bodhidharma (Damo "Tamo" en chino) llegó al Monasterio de Shaolin (Henan, norte de China). Tamo consideraba que era beneficioso para sus prácticas espirituales que los monjes tuvieran cuerpos sanos y buena salud, por ello les enseñó una serie de ejercicios, para ayudarles en sus meditaciones. Estos movimientos fueron los inicios de la base de las artes marciales chinas, pero estaban muy lejos de lo que hoy se conoce como kung fu. Sin embargo, muy probablemente en el Monasterio de Shaolin no fuesen totalmente desconocedores de algunas habilidades de lucha antes de la llegada de Damo.
-          </p>
-
-          <p>
-            Es una forma de autodefensa y en conjunto con sus principios filosóficos crea una forma de arte holística que siembra el equilibrio interior.
-          </p>
-
-          <h2 class="text-3xl font-bold text-black mt-10 mb-4">Los principios filosóficos en los que se basa el Kung fu son:</h2>
-
-          <h3 class="text-2xl font-bold text-black mt-8 mb-3">El Taoísmo:</h3>
-          <p>
-            Basado primordialmente en el Tao Te King que la tradición atribuye al filósofo chino Lao Tsé. Sus enseñanzas parten del concepto de unidad absoluta y al mismo tiempo mutable, denominado Tao. La palabra china tao (o dao, dependiendo de la romanización que se use), suele traducirse por 'vía' o 'camino'. El Taoísmo establece la existencia de tres fuerzas: una pasiva, otra activa y una tercera, conciliadora. Las dos primeras se oponen y complementan simultáneamente entre sí, es decir que son interdependientes de manera absoluta y funcionan como una unidad. Son el yin (fuerza pasiva/sutil, femenina, húmeda…) y el yang (fuerza activa/concreta, masculina, seca…). La tercera fuerza es el tao, o fuerza superior que las contiene.
-          </p>
-          <p>
-            El objetivo fundamental de los taoístas es alcanzar la inmortalidad, si bien, a veces no se entiende ésta literalmente, sino como longevidad en plenitud. De la misma manera, se decía que las personas que vivían en armonía con la naturaleza eran inmortales.
-          </p>
-
-          <h3 class="text-2xl font-bold text-black mt-8 mb-3">El Budismo Chan (禅Chan = Zen = "meditación")</h3>
-          <p>Conducta ética basada en la comprensión de las cuatro verdades:</p>
-          <ol class="list-decimal list-inside space-y-2 ml-4">
-            <li>El sufrimiento existe.</li>
-            <li>El sufrimiento tiene una causa.</li>
-            <li>El sufrimiento puede extinguirse, extinguiendo su causa.</li>
-            <li>Para extinguir la causa del sufrimiento, debemos seguir el Noble camino óctuple:
-              <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
-                <li>Comprensión correcta</li>
-                <li>Pensamiento correcto</li>
-                <li>Palabra correcta</li>
-                <li>Acción correcta</li>
-                <li>Ocupación correcta</li>
-                <li>Esfuerzo correcto</li>
-                <li>Atención correcta</li>
-                <li>Concentración correcta</li>
-              </ul>
-            </li>
-          </ol>
-
-          <h3 class="text-2xl font-bold text-black mt-8 mb-3">Confucionismo:</h3>
-          <p>
-            Es el conjunto de doctrinas morales. Como para la mayor parte de sus contemporáneos, los confucianos ven al cosmos como algo armónico que regula las estaciones, la vida animal, la vegetal y la humana. Si esta armonía era trastornada, habría graves consecuencias. Un ejemplo común que utiliza el confucianismo es el del mal gobernante que conduce a su pueblo a la ruina mediante su conducta.
-          </p>
-
-          <p class="mt-6">
-            Estos principios se relacionan con lo que se conoce en las artes marciales con el término de «Budo» (en japonés), Wu Dao "Camino del guerrero" (conjunto de normas éticas).
-          </p>
-
-          <p>
-            Las escuelas tradicionales chinas de artes marciales, tales como el famoso monasterio de Shaolin, consideran que el kung-fu no es sólo un método de lucha (o autoprotección), sino que también es una filosofía o estilo de vida.
-          </p>
-
-          <p>
-            Los estilos de kung-fu se pueden dividir en varias categorías: por ejemplo, externos e internos, en referencia a si hacen mayor énfasis en el desarrollo de capacidades físicas o, por el contrario, en el potencial interior.
-          </p>
-
-          <p>
-            También se pueden clasificar según su origen geográfico; en estilos del norte y del sur.
-          </p>
-
-          <p>
-            La principal diferencia destacable entre los estilos del norte y del sur es que los del norte tienden a enfatizar en las patadas (rápidas y potentes), saltos y sus movimientos, en general, son fluidos y rápidos, mientras que los estilos del sur se centran más en la fuerza de los brazos y las técnicas de mano, con posiciones firmes y estables.
-          </p>
-
-          <p>
-            El término "kwoon" significa "sala de entrenamiento", es decir, es el lugar donde se aprende las artes marciales.
-              </p>
             </div>
-      </div>
-    </div>
-  </Section>
-
-  <!-- Section 2: Teacher Intro -->
-  <Section background="light">
-    <div class="max-w-4xl mx-auto">
-      <div class="flex flex-col md:flex-row gap-16 items-start">
-        <div class="md:w-1/3">
-          <div class="rounded-full overflow-hidden shadow-lg bg-transparent">
-            <img 
-              src="/Zaida-Frega-Kung-fu.gif" 
-              alt="Zaida Frega - Sifu Kung fu" 
-              class="w-full h-auto"
-            />
+            <a
+              href={`https://instagram.com/${instagram}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-brand-orange hover:text-brand-orange-light transition-colors text-lg font-semibold"
+            >
+              @{instagram}
+            </a>
           </div>
         </div>
 
-        <div class="md:w-2/3">
-          <h2 class="text-4xl font-bold text-black mb-2">Zaida Frega</h2>
-          <p class="text-xl text-brand-orange font-semibold mb-6">Sifu Kung Fu</p>
-          
-          <div class="text-text-base text-lg leading-relaxed space-y-4">
-            <p>
-              Como cualquier chica de Buenos Aires que busca hacer Artes Marciales, le dijeron que era cosa de varones. Y ella lo pospuso por años, hasta que fue a la Universidad y sintió que tenía energía extra que gastar y sucedió que apareció el Kung Fu. La profesora era una mujer llamada Lien Pham, y así Zai empezó allí.
-            </p>
-            <p>
-              Dos años después, ella sumó el Tai Chi a su régimen, y entrenó en ambos mientras se graduaba de Diseño de Imagenes y Sonido. Empezó a enseñar cuando tenía 23 años y continúa sintiendo que tiene sentido el hacerlo.
-            </p>
-          </div>
+        <div class="md:w-2/5">
+          <img
+            src="/Kung fu.jpg"
+            alt="Kung fu en Betsubara Dojo"
+            class="w-full h-auto rounded-lg shadow-lg"
+          />
         </div>
       </div>
     </div>

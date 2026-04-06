@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+
+const instagram = 'uminoshi';
+---
+
+<BaseLayout title="Ashtanga yoga | Betsubara Dojo">
+  <Section>
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-5xl font-bold text-black mb-8">Ashtanga yoga</h1>
+
+      <div class="flex flex-col md:flex-row gap-10">
+        <div class="md:w-2/5">
+          <img
+            src="/ashtanga_yoga.jpg"
+            alt="Ashtanga yoga en Betsubara Dojo"
+            class="w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
+
+        <div class="md:w-3/5">
+          <div class="prose prose-lg text-text-base leading-relaxed space-y-6">
+            <p>
+              Ashtanga Yoga es conocido como el Yoga dinámico. Es una práctica que consiste en hacer posturas (asanas) unidos por movimientos respiratorios. La práctica es una serie ya armada, lo que trabajamos en la clase es en el aprendizaje de esta serie.
+            </p>
+            <p>
+              Nosotras trabajamos un estilo que se llama Mysore, a diferencia de las clases guiadas donde un maestro se coloca al frente y guía a todos los alumnos por igual, la propuesta de este estilo es que cada practicante se encuentre con su proceso, buscando su propio ritmo de práctica y respiración, por lo cual con cada alumno vamos aprendiendo o avanzando la serie, haciendo ajustes y variaciones de acuerdo a la necesidad.
+            </p>
+          </div>
+
+          <div class="mt-12 space-y-6">
+            <div>
+              <h3 class="text-lg font-bold text-black mb-2">Horarios</h3>
+              <ul class="text-text-base text-lg space-y-1">
+                <li>Lunes 9 a 11hs</li>
+                <li>Jueves 8 a 10hs</li>
+              </ul>
+            </div>
+            <a
+              href={`https://instagram.com/${instagram}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-brand-orange hover:text-brand-orange-light transition-colors text-lg font-semibold"
+            >
+              @{instagram}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

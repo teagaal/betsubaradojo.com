@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+
+const instagram = 'beayoguini';
+---
+
+<BaseLayout title="Vinyasa Yoga | Betsubara Dojo">
+  <Section>
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-5xl font-bold text-black mb-8">Vinyasa Yoga</h1>
+
+      <div class="flex flex-col md:flex-row gap-10">
+        <div class="md:w-3/5">
+          <div class="prose prose-lg text-text-base leading-relaxed space-y-6">
+            <p>
+              El Vinyasa Yoga es una práctica completa y dinámica que conecta el movimiento con la respiración. A través de secuencias fluidas, cultivamos la conciencia corporal, la fuerza funcional e isométrica, la flexibilidad, el equilibrio y la respiración consciente, finalizando con un momento de relajación profunda.
+            </p>
+          </div>
+
+          <div class="mt-12 space-y-6">
+            <div>
+              <h3 class="text-lg font-bold text-black mb-2">Horario</h3>
+              <p class="text-text-base text-lg">Domingo de 13 a 14:30hs</p>
+            </div>
+            <a
+              href={`https://instagram.com/${instagram}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-brand-orange hover:text-brand-orange-light transition-colors text-lg font-semibold"
+            >
+              @{instagram}
+            </a>
+          </div>
+        </div>
+
+        <div class="md:w-2/5">
+          <img
+            src="/Vinyasa_yoga.jpg"
+            alt="Vinyasa Yoga en Betsubara Dojo"
+            class="w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

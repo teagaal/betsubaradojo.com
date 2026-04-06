@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+
+const instagram = 'm.marisavillar';
+---
+
+<BaseLayout title="Entrenamiento corporal integral | Betsubara Dojo">
+  <Section>
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl font-bold text-black mb-6">Entrenamiento corporal integral</h1>
+
+      <div class="prose prose-lg text-text-base leading-relaxed space-y-6">
+        <p>
+          El entrenamiento corporal integral es una propuesta que trabaja el cuerpo de manera completa, combinando ejercicios de fuerza, movilidad, coordinación y flexibilidad. Se busca desarrollar un cuerpo funcional, equilibrado y libre de lesiones.
+        </p>
+        <p>
+          Las clases están diseñadas para adaptarse a distintos niveles de condición física, promoviendo el autoconocimiento corporal y la mejora progresiva. Es una práctica ideal para complementar cualquier disciplina marcial o deportiva.
+        </p>
+      </div>
+
+      <div class="mt-12">
+        <a
+          href={`https://instagram.com/${instagram}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-brand-orange hover:text-brand-orange-light transition-colors text-lg font-semibold"
+        >
+          @{instagram}
+        </a>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

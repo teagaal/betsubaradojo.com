@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+
+const instagrams = ['escuela_shaolien', 'zailu.chienmovimiento'];
+---
+
+<BaseLayout title="Taichi | Betsubara Dojo">
+  <Section>
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-5xl font-bold text-black mb-8">Taichi</h1>
+
+      <div class="flex flex-col md:flex-row gap-10">
+        <div class="md:w-2/5">
+          <img
+            src="/Taichi.jpg"
+            alt="Taichi en Betsubara Dojo"
+            class="w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
+
+        <div class="md:w-3/5">
+          <div class="prose prose-lg text-text-base leading-relaxed space-y-6">
+            <p>
+              El Tai Chi Chuan es un arte marcial interno e integral, enfocado en el desarrollo físico, mental y espiritual del ser humano.
+            </p>
+            <p>
+              Cuando hablamos de Tai Chi, dejamos de lado la práctica marcial (representado por la palabra chuan = puño) para enfocarnos en el trabajo interno, a partir de la concientización de la respiración, la corrección de las posturas, y la relajación.
+            </p>
+          </div>
+
+          <div class="mt-12 space-y-6">
+            <div>
+              <h3 class="text-lg font-bold text-black mb-2">Horarios</h3>
+              <p class="text-text-base text-lg">
+                Lunes y martes 20hs · Jueves 21hs · Miércoles 10hs
+              </p>
+            </div>
+            <div class="flex gap-4">
+              {instagrams.map((handle) => (
+                <a
+                  href={`https://instagram.com/${handle}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-brand-orange hover:text-brand-orange-light transition-colors text-lg font-semibold"
+                >
+                  @{handle}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

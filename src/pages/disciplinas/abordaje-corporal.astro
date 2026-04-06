@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+
+const instagram = 'tierrapeuta';
+---
+
+<BaseLayout title="Abordaje corporal | Betsubara Dojo">
+  <Section>
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl font-bold text-black mb-6">Abordaje corporal</h1>
+
+      <div class="prose prose-lg text-text-base leading-relaxed space-y-6">
+        <p>
+          Más que una disciplina es un "dispositivo" conformado por dos disciplinas y un marco teórico; tai chi, chi kung y mindfulness. Es una extensión de mi proyecto de tesis de licenciatura en psicología para el tratamiento de enfermedades psicosomáticas, que luego fue derivando junto con mi especialización en psicotraumatología en un abordaje más profundo a través del método EMDR.
+        </p>
+        <p>
+          Son clases grupales tipo taller en las que utilizamos técnicas del tai chi, chi kung y mindfulness para complementar y nutrir el proceso psicoterapéutico individual.
+        </p>
+        <p>
+          Trabajamos fuertemente en el entrenamiento de la percepción externa e interna; exterior, propio e interocepción. Este trabajo de fortalecimiento y entrenamiento de la atención a través del cuerpo en una capa más inmediata trae consigo una "bajada" de los niveles de estrés, que con la práctica sedimentan en una mejor gestión y salud emocional. Otro beneficio, que lo que más me interesa como terapeuta especializado en trauma, es el efecto estabilizador cuando la práctica se convierte en una herramienta de uso cotidiano.
+        </p>
+      </div>
+
+      <div class="mt-12 flex flex-col sm:flex-row sm:items-center gap-6">
+        <span class="text-lg text-black font-semibold">Viernes 18hs</span>
+        <a
+          href={`https://instagram.com/${instagram}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-brand-orange hover:text-brand-orange-light transition-colors text-lg font-semibold"
+        >
+          @{instagram}
+        </a>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

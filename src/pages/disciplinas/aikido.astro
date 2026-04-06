@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+
+const instagram = 'shuhari_dojo';
+---
+
+<BaseLayout title="Aikido | Betsubara Dojo">
+  <Section>
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-5xl font-bold text-black mb-8">Aikido</h1>
+
+      <div class="flex flex-col md:flex-row gap-10">
+        <div class="md:w-3/5">
+          <div class="prose prose-lg text-text-base leading-relaxed space-y-6">
+            <p>
+              El Aikido es un arte marcial para el desarrollo personal, entrenando el cuerpo, la mente y el espíritu, mediante diferentes movimientos y técnicas que se ejecutan de a dos, en un ambiente cooperativo y constructivo.
+            </p>
+            <p>
+              El Aikido no se aprende, se practica. La práctica de Aikido se genera en un espacio donde el alumnado de diferentes niveles (principiantes, intermedios y avanzados), pueden interactuar, cooperando para el crecimiento y desarrollo de c/u, aprendiendo sobre la relación Sempai/Kohai (alumno antiguo / alumno inicial) y profundizando sobre el concepto de "Shoshin", mente de principiante, durante la hora de entrenamiento.
+            </p>
+            <p>
+              La práctica permite desarrollar una percepción y diálogo corporal, gestando la posibilidad de poder sentir y escuchar nuestro cuerpo, el cuerpo de nuestro compañero/a de práctica y, el movimiento que se gesta entre ambos.
+            </p>
+            <p>
+              A su vez, Aikido no tiene torneos ni competencias, por lo que el ambiente de práctica genera un poder crecer desde una perspectiva diferente, no competitiva.
+            </p>
+          </div>
+
+          <div class="mt-12 space-y-6">
+            <div>
+              <h3 class="text-lg font-bold text-black mb-2">Horarios</h3>
+              <ul class="text-text-base text-lg space-y-1">
+                <li>Martes y viernes 8:30hs</li>
+                <li>Miércoles y viernes 20hs</li>
+                <li>Sábados 12hs</li>
+              </ul>
+            </div>
+            <a
+              href={`https://instagram.com/${instagram}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-brand-orange hover:text-brand-orange-light transition-colors text-lg font-semibold"
+            >
+              @{instagram}
+            </a>
+          </div>
+        </div>
+
+        <div class="md:w-2/5">
+          <img
+            src="/Aikido.png"
+            alt="Aikido en Betsubara Dojo"
+            class="w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>
